@@ -1,0 +1,45 @@
+    <odoo>
+
+        <data>
+        
+        <record id="department_action" model="ir.actions.act_window">
+            <field name="name">Department</field>
+            <field name="res_model">employee.department</field>
+        </record>
+        <menuitem
+            id="emp_department_menu"
+            name="Employee Department"
+            action="department_action"
+            parent="main_clearance_root"
+            />
+        <record id="department_view_form" model="ir.ui.view">
+            <field name="name">department.view.form</field>
+            <field name="model">employee.department</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="signature"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>  
+        <record id="employee_department_view_tree" model="ir.ui.view">
+            <field name="name">employee.department.view.tree</field>
+            <field name="model">employee.department</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="signature"/>
+                </tree>
+            </field>
+        </record>
+        </data>
+        
+
+    </odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+    <record id="financial_department_action" model="ir.actions.act_window">
+        <field name="name">financial</field>
+        <field name="res_model">financial</field>
+    </record>
+    <menuitem
+        id="financial_department_menu"
+        name="financial Department"
+        action="financial_department_action"
+        parent="main_clearance_root"
+        />
+      <record id="financial_department_view_form" model="ir.ui.view">
+        <field name="name">financial.department.view.form</field>
+        <field name="model">financial</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group> 
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="signature"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+      </record>  
+    <record id="financial_view_tree" model="ir.ui.view">
+        <field name="name">financial.view.tree</field>
+        <field name="model">financial</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="signature"/>
+            </tree>
+        </field>
+    </record>
+    </data>
+    
+
+</odoo>

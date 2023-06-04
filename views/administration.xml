@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+    <record id="administration_department_action" model="ir.actions.act_window">
+        <field name="name">administration</field>
+        <field name="res_model">administration</field>
+    </record>
+    <menuitem
+        id="administration_department_menu"
+        name="administration Department"
+        action="administration_department_action"
+        parent="main_clearance_root"
+        />
+      <record id="administration_department_view_form" model="ir.ui.view">
+        <field name="name">administration.department.view.form</field>
+        <field name="model">administration</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                    <field name="telecom"/>
+                    <field name="transportation"/>
+                    <field name="housing"/>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="signature"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+      </record>  
+    <record id="administration_view_tree" model="ir.ui.view">
+        <field name="name">administration.view.tree</field>
+        <field name="model">administration</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="signature"/>
+                    <field name="telecom"/>
+                    <field name="transportation"/>
+                    <field name="housing"/>
+            </tree>
+        </field>
+    </record>
+    </data>
+    
+
+</odoo>

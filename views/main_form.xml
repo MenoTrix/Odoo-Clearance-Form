@@ -1,0 +1,201 @@
+<odoo>
+    <data>
+    <record id="main_form_action" model="ir.actions.act_window">
+        <field name="name">Clearance</field>
+        <field name="res_model">main.form</field>
+        <field name="view_mode">tree,form</field>
+    </record>    
+        
+    <menuitem
+        id="main_clearance_root"
+        name="Clearance"
+       />
+    <menuitem
+        id="clearance_menu"
+        name="Clearance Menu"
+        action="main_form_action"
+        parent="main_clearance_root"
+        />
+    
+    <record id="main_form_view_tree" model="ir.ui.view">
+        <field name="name">main_form.view.tree</field>
+        <field name="model">main.form</field>
+        <field name="arch" type="xml">
+            <tree  sample="1">
+                <field name="emp_name" />
+                <field name="title" />
+                <field name="empNo" />
+                <field name="section" />
+                <field name="location" />
+            </tree>
+        </field>
+    </record>
+
+<record id="main_form_view_form" model="ir.ui.view">
+    <field name="name">main_form.view.form</field>
+    <field name="model">main.form</field>
+    <field name="arch" type="xml">
+        <form string="">
+            <sheet>
+            <group >
+                <group string="بيانات الموظف">
+                <field name="emp_name" />
+                <field name="title" />
+                <field name="empNo" />
+                <field name="section" />
+                <field name="location" />
+                </group>
+                <group  string="سبب الاخلاء">
+                <field name="clearanceReason" />
+                <field name="exit_reason" />
+                </group>
+                </group>
+                <notebook>
+                <!-- Page 1 -->
+                    <page string="إدارة الموظف ">
+                   <group  string="Employee Department"> 
+                    <group >    
+                    <field name="emp_department_id" />
+                    <field name="emp_department_date" 
+                     />
+                    <field name="emp_department_signature" 
+                    />
+                    </group> 
+                    <group >
+                    <field name="emp_department_reason"/>
+                    </group> 
+                    </group>
+                    </page>
+                    <!-- Page 2 -->
+                    <page string="الحاسب اللآلي">
+                    <group  string="IT Department"> 
+                    <group >
+                    <field name="it_department_name" />
+                    <field name="it_department_date" />
+                    <field name="it_department_signature" />
+                    </group> 
+                    <group >    
+                    <field name="it_department_reason" />
+                    <field name="it_department_clear" />
+                    </group> 
+                    </group>
+                    <!-- Page 3 -->
+                    </page>
+                    <page string="المستودعات">
+                    <group  string="Stores"> 
+                    <group >
+                    <field name="stores_department_name" />
+                    <field name="stores_department_date" />
+                    <field name="stores_department_signature" />
+                    </group> 
+                    <group >
+                        
+                    <field name="stores_department_reason" />
+                    <field name="stores_department_clear" />
+                    </group> 
+                    </group>
+                    </page>
+                       <!-- Page 4 -->
+                    <page string="الشؤون الإدارية">
+                     <group  string="Administration"> 
+                    
+                    <group >
+                        
+                    <field name="administration_department_telecom" />
+                    </group>
+                    <group >
+                        
+                    <field name="administration_department_transportation" />
+                    </group>
+                    <group >
+                        
+                    <field name="administration_department_housing" />
+                    </group>
+                    </group>
+                    <group >
+               
+                    <group >
+                    <field name="administration_department_name" />
+                    <field name="administration_department_date" />
+                    <field name="administration_department_signature" />
+                        
+                    </group>
+                    <group >
+                    <field name="administration_department_reason" />
+                    <field name="administration_department_clear" />
+                        
+                    </group>         
+                    </group>
+                    </page>
+                    <!-- Page 5 -->
+                    <page string="المـــالية ">
+                    <group  string="Financial"> 
+                    <group >
+                    <field name="financial_department_name" />
+                    <field name="financial_department_date" />
+                    <field name="financial_department_signature" />
+                    </group> 
+                    <group >
+                        
+                    <field name="financial_department_reason" />
+                    <field name="financial_department_clear" />
+                    </group> 
+                    </group>
+                    </page>
+                    <!-- Page 6 -->
+                    <page string="شؤون الموظفين">
+                    <group  string="Personnel Department"> 
+                    
+                    <group >
+                        
+                    <field name="personnel_department_loans" />
+                    </group>
+                    <group >
+                        
+                    <field name="personnel_department_empCard" />
+                    </group>
+                    <group >
+                        
+                    <field name="personnel_department_medicalCard" />
+                    </group>
+                    </group>
+                    <group >
+               
+                    <group >
+                    <field name="personnel_department_name" />
+                    <field name="personnel_department_date" />
+                    <field name="personnel_department_signature" />
+                        
+                    </group>
+                    <group >
+                    <field name="personnel_department_reason" />
+                    <field name="personnel_department_clear" />
+                        
+                    </group>         
+                    </group>
+                    </page>
+                </notebook>
+                <group  string="Personnl Use Only">
+                     <group >
+                    <field name="personnel_use_clear" />
+                        
+                    </group>
+                    <group >
+                    <field name="personnel_use_reason" />
+                    <field name="personnel_use_stamp" />                        
+                    <field name="personnel_use_signature" />
+                    <field name="personnel_use_date" />                        
+                    </group>          
+                </group>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" groups="base.group_user"/>
+                <field name="activity_ids"/>
+                <field name="message_ids"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+    </data>
+</odoo>

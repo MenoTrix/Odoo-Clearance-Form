@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.main.form,access_main_form,clearance_form.model_main_form,base.group_user,1,1,1,1
+access.employee.department,access_employee_department,clearance_form.model_employee_department,base.group_user,1,1,1,1
+access.it.department,access_it_department,clearance_form.model_it_department,base.group_user,1,1,1,1
+access.store,access_store,clearance_form.model_store,base.group_user,1,1,1,1
+access.administration,access_administration,clearance_form.model_administration,base.group_user,1,1,1,1
+access.financial,access_financial,clearance_form.model_financial,base.group_user,1,1,1,1
+access.personnel,access_personnel,clearance_form.model_personnel,base.group_user,1,1,1,1
